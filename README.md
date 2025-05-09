@@ -24,17 +24,21 @@ Based on the access to different SM, the user/developer has to install extra dep
 For testing of the package, access to YouTube with an API-key can configured here: https://console.cloud.google.com/welcome (with any google account).
 
 Repos:
+
 https://gitlab.bsc.es/rsoleyma/platform_clients
+
 https://github.com/ERC-BIG-5/platform-clients.git
 
-This repo is already more developer/user friendly than the others. Containing a detailed readme on how to setup data collection.
+This repo is already been more developer/user friendly than the others. Containing a detailed readme on how to setup data collection.
 
 ### databases
 
 This is the repository that manages collection-tasks and collected data. It uses SqlAlchemy (see below) to store data in sqlite databases. It uses several SM independent tables to store data for collection-tasks, posts, users, comments (tho only collection-tasks, posts are developed in platform-clients package so far).
 
 Repos:
+
 https://gitlab.bsc.es/rsoleyma/big5_databases
+
 https://github.com/ERC-BIG-5/databases
 
 ### pipelines
@@ -44,27 +48,30 @@ The package, is for flexible data processing. It is the glue, that batch process
 It allows to define process-methods (python scripts), with configuration models, which can be part of the pipelines packages or sit anywhere on the executing system. A configuration file, can specify a set of process-methods with task specific configurations and flows, which execute a set of process-methods in a order.
 Examples flows:
 **sample downloaded posts and download mediafiles**
-1- iterate trough a databases table of posts
-2-Select post for a 10 hour timewindow within a range of 2 years
-3-Iterate through those posts, and pick the first one that contains media files
-4-download those media-files
-5-store information about those media files back into the database for that post (file-locations or errors).
+
+- iterate trough a databases table of posts
+- Select post for a 10 hour timewindow within a range of 2 years
+- Iterate through those posts, and pick the first one that contains media files
+- download those media-files
+- store information about those media files back into the database for that post (file-locations or errors).
 
 **create Labelstudio tasks**
-1- iterate trough a databases table of posts
-2-Select post for a 10 hour timewindow within a range of 2 years
-3-mark one random post as designated for labeling
-4-create json file, that can be imported to Labelstudio
-5-store selection, back into the database
+- iterate trough a databases table of posts
+- Select post for a 10 hour timewindow within a range of 2 years
+- mark one random post as designated for labeling
+- create json file, that can be imported to Labelstudio
+- store selection, back into the database
 
 repo:
+
 https://gitlab.bsc.es/rsoleyma/datapipeline
 
 ### labelstudio-tools
 
 This package handles the interaction to [Labelstudio](https://labelstud.io/). It uses the API of an Labelstudio (LS) instance, to create LS projects, tasks and collects and analyses the annotation results.
 
-repos:
+repo:
+
 https://github.com/ERC-BIG-5/labelstudio-tools
 
 ### Python packages
