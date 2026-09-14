@@ -12,6 +12,8 @@ databases <-- read/write --> pipelines
 LLM <-- read/write --> databases
 pipelines <-- "create LS task files,read annotation results" --> labelstudio-tools
 labelstudio-tools <-- api --> Labelstudio[[Labelstudio instance on our VM]]
+LLM --> metrics
+labelstudio-tools --> metrics
 ```
 
 ### platform-clients
