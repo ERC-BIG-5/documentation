@@ -8,7 +8,8 @@ The packages are managed with **[uv](https://docs.astral.sh/uv/)**, which is hig
 graph
 
 platform-clients -- dump data--> databases
-databases <-- reade/write --> pipelines
+databases <-- read/write --> pipelines
+llm <-- read/write --> databases
 pipelines <-- "create LS task files,read annotation results" --> labelstudio-tools
 labelstudio-tools <-- api --> Labelstudio[[Labelstudio instance on our VM]]
 ```
