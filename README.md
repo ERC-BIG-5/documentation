@@ -9,7 +9,7 @@ graph
 
 platform-clients -- dump data--> databases
 databases <-- read/write --> pipelines
-llm <-- read/write --> databases
+LLM <-- read/write --> databases
 pipelines <-- "create LS task files,read annotation results" --> labelstudio-tools
 labelstudio-tools <-- api --> Labelstudio[[Labelstudio instance on our VM]]
 ```
@@ -66,6 +66,10 @@ Examples flows:
 repo:
 
 https://gitlab.bsc.es/rsoleyma/datapipeline
+
+### LLM
+
+Package for running large language models for data annotations or embeddings. Uses [VLLM](https://vllm.ai/) as framework to load,configure and run llms. Uses specific databases (ML-Process dbs), which store input data from platform-dbs (post text, media-file path), run configurations and results.
 
 ### labelstudio-tools
 
